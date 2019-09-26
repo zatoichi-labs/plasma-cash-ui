@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/plasma-cash-ui/static/js/main.94458d51.chunk.js",
+    "main.js.map": "/plasma-cash-ui/static/js/main.94458d51.chunk.js.map",
+    "runtime-main.js": "/plasma-cash-ui/static/js/runtime-main.6c7aad5d.js",
+    "runtime-main.js.map": "/plasma-cash-ui/static/js/runtime-main.6c7aad5d.js.map",
+    "static/css/2.6fee5db6.chunk.css": "/plasma-cash-ui/static/css/2.6fee5db6.chunk.css",
+    "static/js/2.f2b637d2.chunk.js": "/plasma-cash-ui/static/js/2.f2b637d2.chunk.js",
+    "static/js/2.f2b637d2.chunk.js.map": "/plasma-cash-ui/static/js/2.f2b637d2.chunk.js.map",
+    "index.html": "/plasma-cash-ui/index.html",
+    "precache-manifest.63795b439979b9576d455e8319d346a2.js": "/plasma-cash-ui/precache-manifest.63795b439979b9576d455e8319d346a2.js",
+    "service-worker.js": "/plasma-cash-ui/service-worker.js",
+    "static/css/2.6fee5db6.chunk.css.map": "/plasma-cash-ui/static/css/2.6fee5db6.chunk.css.map",
+    "static/media/semantic.min.css": "/plasma-cash-ui/static/media/outline-icons.ef60a4f6.woff"
+  }
+}
