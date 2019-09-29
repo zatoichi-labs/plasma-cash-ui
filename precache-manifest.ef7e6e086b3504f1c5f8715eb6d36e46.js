@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59edfb9795efe550d4ccb3f276ea8876",
+    "revision": "df957ddad46c8485bfabb955c3163faf",
     "url": "/plasma-cash-ui/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plasma-cash-ui/static/js/2.61fffb30.chunk.js"
   },
   {
-    "revision": "57e674d0722898f9904b",
-    "url": "/plasma-cash-ui/static/js/main.3111b4d3.chunk.js"
+    "revision": "189864f4d9c2d559983b",
+    "url": "/plasma-cash-ui/static/js/main.af636e00.chunk.js"
   },
   {
     "revision": "25713cdc5a730cab95c1",
