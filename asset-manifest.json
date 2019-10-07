@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/plasma-cash-ui/static/js/main.af636e00.chunk.js",
-    "main.js.map": "/plasma-cash-ui/static/js/main.af636e00.chunk.js.map",
-    "runtime~main.js": "/plasma-cash-ui/static/js/runtime~main.6c7aad5d.js",
-    "runtime~main.js.map": "/plasma-cash-ui/static/js/runtime~main.6c7aad5d.js.map",
+    "main.js": "/plasma-cash-ui/static/js/main.da45a7cf.chunk.js",
+    "main.js.map": "/plasma-cash-ui/static/js/main.da45a7cf.chunk.js.map",
+    "runtime~main.js": "/plasma-cash-ui/static/js/runtime~main.f9a1e50b.js",
+    "runtime~main.js.map": "/plasma-cash-ui/static/js/runtime~main.f9a1e50b.js.map",
     "static/css/2.65d3f03f.chunk.css": "/plasma-cash-ui/static/css/2.65d3f03f.chunk.css",
-    "static/js/2.61fffb30.chunk.js": "/plasma-cash-ui/static/js/2.61fffb30.chunk.js",
-    "static/js/2.61fffb30.chunk.js.map": "/plasma-cash-ui/static/js/2.61fffb30.chunk.js.map",
+    "static/js/2.af426102.chunk.js": "/plasma-cash-ui/static/js/2.af426102.chunk.js",
+    "static/js/2.af426102.chunk.js.map": "/plasma-cash-ui/static/js/2.af426102.chunk.js.map",
     "index.html": "/plasma-cash-ui/index.html",
-    "precache-manifest.ef7e6e086b3504f1c5f8715eb6d36e46.js": "/plasma-cash-ui/precache-manifest.ef7e6e086b3504f1c5f8715eb6d36e46.js",
+    "precache-manifest.43ba8e3605861130a89179e25b6f849c.js": "/plasma-cash-ui/precache-manifest.43ba8e3605861130a89179e25b6f849c.js",
     "service-worker.js": "/plasma-cash-ui/service-worker.js",
     "static/css/2.65d3f03f.chunk.css.map": "/plasma-cash-ui/static/css/2.65d3f03f.chunk.css.map",
     "static/media/semantic.min.css": "/plasma-cash-ui/static/media/outline-icons.ef60a4f6.woff"
