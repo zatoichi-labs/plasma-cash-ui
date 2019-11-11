@@ -2,6 +2,14 @@
   "APP_NAME": "plasma-cash",
   "DEVELOPMENT_KEYRING": true,
   "CUSTOM_TYPES": {
-      "TokenId": "u256"
+      "TokenId": "u256",
+      "BlkNum": "u256",
+      "Transaction": {
+          "receiver": "AccountId",
+          "token_id": "TokenId",
+          "prev_blk_num": "BlkNum",
+          "sender": "AccountId",
+          "signature": "Signature"
+      }
   }
 }
