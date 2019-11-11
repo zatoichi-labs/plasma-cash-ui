@@ -7,7 +7,7 @@ import { DeveloperConsole } from './substrate-lib/components';
 
 import AccountSelector from './AccountSelector';
 import BlockNumber from './BlockNumber';
-import ChainState from './ChainState';
+import TokenQuery from './TokenQuery';
 import Events from './Events';
 import Extrinsics from './Extrinsics';
 import Metadata from './Metadata';
@@ -54,7 +54,7 @@ function Main () {
           </Grid.Row>
           <Grid.Row>
             <Extrinsics accountPair={accountPair} />
-            <ChainState />
+            <TokenQuery />
             <Events />
           </Grid.Row>
           <Grid.Row>
