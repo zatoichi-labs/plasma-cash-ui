@@ -4,6 +4,8 @@ import { Container, Dimmer, Loader, Grid, Sticky } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { SubstrateContextProvider, useSubstrate } from './substrate-lib';
 import { DeveloperConsole } from './substrate-lib/components';
+import Metadata from './Metadata';
+import NodeInfo from './NodeInfo';
 
 import AccountSelector from './AccountSelector';
 import BlockNumber from './BlockNumber';
@@ -12,8 +14,6 @@ import Events from './Events';
 import Deposit from './Deposit';
 import Transfer from './Transfer';
 import Withdraw from './Withdraw';
-import Metadata from './Metadata';
-import NodeInfo from './NodeInfo';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
