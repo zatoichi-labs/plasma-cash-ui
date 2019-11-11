@@ -45,14 +45,14 @@ function Main () {
         <AccountSelector setAccountAddress={setAccountAddress} />
       </Sticky>
       <Container>
-        <Grid stackable columns='equal'>
-          <Grid.Row stretched>
+        <Grid divided>
+          <Grid.Row columns={4} stretched>
             <NodeInfo />
             <Metadata />
             <BlockNumber />
             <BlockNumber finalized />
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row columns={3} stretched>
             <Extrinsics accountPair={accountPair} />
             <TokenQuery />
             <Events />
