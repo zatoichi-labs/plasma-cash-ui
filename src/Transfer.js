@@ -21,10 +21,10 @@ export default function Transfer (props) {
   }));
 
   const defaultTransaction = createType('Transaction', {
-      receiver: createType('AccountId', accountPair.address),
+      receiver: createType('AccountId'),
       token_id: createType('TokenId', 0),
       prev_blk_num: createType('BlkNum', 0),
-      sender: createType('AccountId', accountPair.address),
+      sender: createType('AccountId'),
       signature: createType('Signature', "")
     });
   const [transaction, setTransaction] = useState(defaultTransaction);
