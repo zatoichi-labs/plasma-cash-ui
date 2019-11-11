@@ -30,7 +30,7 @@
     "lint:ci": "eslint src/** --max-warnings=0",
     "lint:fix": "eslint --fix src/**",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --repo  git@github.com:zatoichi-labs/plasma-cash-ui.git"
   },
   "eslintConfig": {
     "extends": [
