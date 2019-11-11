@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
-import { Grid, Form, Input } from 'semantic-ui-react';
+import { Grid, Form, Dropdown, Input } from 'semantic-ui-react';
 
 import { useSubstrate } from './substrate-lib';
 import { TxButton } from './substrate-lib/components';
 
 export default function Transfer (props) {
-  const { api } = useSubstrate();
+  const { api, keyring } = useSubstrate();
   const [status, setStatus] = useState(null);
+  const [receiver, setReceiver] = useState("");
   const { accountPair } = props;
+
+  // Get the list of accounts we possess the private key for
+  const keyringOptions = keyring.getPairs().map(account => ({
+    key: account.address,
+    value: account.address,
+    text: account.meta.name.toUpperCase(),
+    icon: 'user'
+  }));
 
   const [formState, setFormState] = useState({
     tokenId: "",
-    receiverId: "",
   });
-  const { tokenId, receiverId } = formState;
+  const { tokenId } = formState;
 
   const onChange = (_, data) =>
     setFormState(formState => ({
@@ -36,12 +44,15 @@ export default function Transfer (props) {
           />
         </Form.Field>
         <Form.Field>
-          <Input
-            onChange={onChange}
-            label='Receiver'
-            fluid
-            placeholder='ID of Recipient'
-            type='text'
+          <Dropdown
+            search
+            selection
+            clearable
+            placeholder="Select Receipient"
+            options={keyringOptions}
+            onChange={(_, dropdown) => {
+              setReceiver(dropdown.value);
+            }}
           />
         </Form.Field>
         <Form.Field>
@@ -51,7 +62,7 @@ export default function Transfer (props) {
             setStatus={setStatus}
             type='TRANSACTION'
             attrs={{
-              params: [tokenId, receiverId],
+              params: [tokenId, receiver],
               tx: api.tx.plasmaCash.transfer
             }}
           />
