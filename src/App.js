@@ -9,7 +9,9 @@ import AccountSelector from './AccountSelector';
 import BlockNumber from './BlockNumber';
 import TokenQuery from './TokenQuery';
 import Events from './Events';
-import Extrinsics from './Extrinsics';
+import Deposit from './Deposit';
+import Transfer from './Transfer';
+import Withdraw from './Withdraw';
 import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
 
@@ -52,7 +54,11 @@ function Main () {
             <BlockNumber finalized />
           </Grid.Row>
           <Grid.Row columns={3} stretched>
-            <Extrinsics accountPair={accountPair} />
+            <Transfer accountPair={accountPair} />
+            <Deposit accountPair={accountPair} />
+            <Withdraw accountPair={accountPair} />
+          </Grid.Row>
+          <Grid.Row columns={3} stretched>
             <TokenQuery />
             <Events />
           </Grid.Row>
