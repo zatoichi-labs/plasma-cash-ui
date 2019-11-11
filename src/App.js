@@ -59,7 +59,7 @@ function Main () {
             <Deposit accountPair={accountPair} />
             <Withdraw accountPair={accountPair} />
           </Grid.Row>
-          <Grid.Row columns={3} stretched>
+          <Grid.Row stretched>
             <Events />
           </Grid.Row>
         </Grid>
