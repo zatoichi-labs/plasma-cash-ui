@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.js": "/plasma-cash-ui/static/js/main.da45a7cf.chunk.js",
-    "main.js.map": "/plasma-cash-ui/static/js/main.da45a7cf.chunk.js.map",
-    "runtime~main.js": "/plasma-cash-ui/static/js/runtime~main.f9a1e50b.js",
-    "runtime~main.js.map": "/plasma-cash-ui/static/js/runtime~main.f9a1e50b.js.map",
-    "static/css/2.65d3f03f.chunk.css": "/plasma-cash-ui/static/css/2.65d3f03f.chunk.css",
-    "static/js/2.af426102.chunk.js": "/plasma-cash-ui/static/js/2.af426102.chunk.js",
-    "static/js/2.af426102.chunk.js.map": "/plasma-cash-ui/static/js/2.af426102.chunk.js.map",
+    "main.js": "/plasma-cash-ui/static/js/main.949a59c6.chunk.js",
+    "main.js.map": "/plasma-cash-ui/static/js/main.949a59c6.chunk.js.map",
+    "runtime-main.js": "/plasma-cash-ui/static/js/runtime-main.7eae9c61.js",
+    "runtime-main.js.map": "/plasma-cash-ui/static/js/runtime-main.7eae9c61.js.map",
+    "static/css/2.1fd11d0d.chunk.css": "/plasma-cash-ui/static/css/2.1fd11d0d.chunk.css",
+    "static/js/2.6c999521.chunk.js": "/plasma-cash-ui/static/js/2.6c999521.chunk.js",
+    "static/js/2.6c999521.chunk.js.map": "/plasma-cash-ui/static/js/2.6c999521.chunk.js.map",
     "index.html": "/plasma-cash-ui/index.html",
-    "precache-manifest.43ba8e3605861130a89179e25b6f849c.js": "/plasma-cash-ui/precache-manifest.43ba8e3605861130a89179e25b6f849c.js",
+    "precache-manifest.c7577b7451df9074222ce7477fc9f5f6.js": "/plasma-cash-ui/precache-manifest.c7577b7451df9074222ce7477fc9f5f6.js",
     "service-worker.js": "/plasma-cash-ui/service-worker.js",
-    "static/css/2.65d3f03f.chunk.css.map": "/plasma-cash-ui/static/css/2.65d3f03f.chunk.css.map",
+    "static/css/2.1fd11d0d.chunk.css.map": "/plasma-cash-ui/static/css/2.1fd11d0d.chunk.css.map",
     "static/media/semantic.min.css": "/plasma-cash-ui/static/media/outline-icons.ef60a4f6.woff"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7eae9c61.js",
+    "static/css/2.1fd11d0d.chunk.css",
+    "static/js/2.6c999521.chunk.js",
+    "static/js/main.949a59c6.chunk.js"
+  ]
 }

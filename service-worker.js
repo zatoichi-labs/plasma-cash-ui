@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/plasma-cash-ui/precache-manifest.43ba8e3605861130a89179e25b6f849c.js"
+  "/plasma-cash-ui/precache-manifest.c7577b7451df9074222ce7477fc9f5f6.js"
 );
 
 self.addEventListener('message', (event) => {
