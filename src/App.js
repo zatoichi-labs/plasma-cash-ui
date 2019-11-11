@@ -12,7 +12,6 @@ import Events from './Events';
 import Extrinsics from './Extrinsics';
 import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
-import TemplateModule from './TemplateModule';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
@@ -56,9 +55,6 @@ function Main () {
             <Extrinsics accountPair={accountPair} />
             <TokenQuery />
             <Events />
-          </Grid.Row>
-          <Grid.Row>
-            <TemplateModule accountPair={accountPair} />
           </Grid.Row>
         </Grid>
         <DeveloperConsole />
