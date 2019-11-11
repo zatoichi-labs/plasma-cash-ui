@@ -4,6 +4,11 @@
   "CUSTOM_TYPES": {
       "TokenId": "u256",
       "BlkNum": "u256",
+      "UnsignedTransaction": {
+        "receiver" : "AccountId",
+        "token_id": "TokenId",
+        "prev_blk_num" : "BlkNum"
+      },
       "Transaction": {
           "receiver": "AccountId",
           "token_id": "TokenId",

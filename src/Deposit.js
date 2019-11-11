@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Grid, Form, Input } from 'semantic-ui-react';
 
+import { blake2AsU8a } from '@polkadot/util-crypto';
+import { createType } from '@polkadot/types';
+
 import { useSubstrate } from './substrate-lib';
 import { TxButton } from './substrate-lib/components';
 
@@ -9,17 +12,30 @@ export default function Deposit (props) {
   const [status, setStatus] = useState(null);
   const { accountPair } = props;
 
-  const [formState, setFormState] = useState({
-    tokenId: "",
-  });
-  const { tokenId } = formState;
+  const defaultTransaction = createType('Transaction', {
+      receiver: createType('AccountId', accountPair.address),
+      token_id: createType('TokenId', 0),
+      prev_blk_num: createType('BlkNum', 0),
+      sender: createType('AccountId', accountPair.address),
+      signature: createType('Signature', "")
+    });
+  const [transaction, setTransaction] = useState(defaultTransaction);
 
-  const onChange = (_, data) =>
-    setFormState(formState => ({
-        ...formState,
-        [data.state]: data.value
+  const onChangeToken = token => {
+    setTransaction(prevTxn => {
+      let unsignedTxn = createType('UnsignedTransaction', {
+        receiver: createType('AccountId', accountPair.address),
+        token_id: createType('TokenId', token),
+        prev_blk_num: createType('BlkNum', prevTxn.prev_blk_num),
+      });
+      let signature = accountPair.sign(blake2AsU8a(unsignedTxn.toU8a()));
+      return createType('Transaction', {
+        ...unsignedTxn,
+        sender: createType('AccountId', accountPair.address),
+        signature: createType('Signature', signature)
       })
-    );
+    });
+  };
 
   return (
     <Grid.Column>
@@ -27,11 +43,11 @@ export default function Deposit (props) {
       <Form>
         <Form.Field>
           <Input
-            onChange={onChange}
+            onChange={(_, data) => { onChangeToken(data.value) }}
             label='Token ID'
             fluid
             placeholder='ID of Token you control'
-            state='tokenId'
+            state={transaction.tokenId}
             type='text'
           />
         </Form.Field>
@@ -42,7 +58,7 @@ export default function Deposit (props) {
             setStatus={setStatus}
             type='TRANSACTION'
             attrs={{
-              params: [tokenId],
+              params: [transaction],
               tx: api.tx.plasmaCash.deposit
             }}
           />
