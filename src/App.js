@@ -53,13 +53,13 @@ function Main () {
             <BlockNumber />
             <BlockNumber finalized />
           </Grid.Row>
-          <Grid.Row columns={3} stretched>
+          <Grid.Row columns={4} stretched>
+            <TokenQuery />
             <Transfer accountPair={accountPair} />
             <Deposit accountPair={accountPair} />
             <Withdraw accountPair={accountPair} />
           </Grid.Row>
           <Grid.Row columns={3} stretched>
-            <TokenQuery />
             <Events />
           </Grid.Row>
         </Grid>
