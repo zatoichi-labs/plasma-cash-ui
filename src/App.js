@@ -13,7 +13,6 @@ import Extrinsics from './Extrinsics';
 import Metadata from './Metadata';
 import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
-import Upgrade from './Upgrade';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
@@ -52,9 +51,6 @@ function Main () {
             <Metadata />
             <BlockNumber />
             <BlockNumber finalized />
-          </Grid.Row>
-          <Grid.Row>
-            <Upgrade accountPair={accountPair} />
           </Grid.Row>
           <Grid.Row>
             <Extrinsics accountPair={accountPair} />
