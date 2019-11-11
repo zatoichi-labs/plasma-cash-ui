@@ -14,7 +14,7 @@ export default function TxButton ({
   disabled = false
 }) {
   const { api } = useSubstrate();
-  const { params = null, sudo = false, tx = null } = attrs;
+  const { params = null, tx = null } = attrs;
   const isQuery = () => type === 'QUERY';
 
   const transaction = async () => {
@@ -38,9 +38,9 @@ export default function TxButton ({
     try {
       // Check if tx has params
       if (!params) {
-        txExecute = !sudo ? tx() : tx.sudo();
+        txExecute = tx();
       } else {
-        txExecute = !sudo ? tx(...params) : tx.sudo(...params);
+        txExecute = tx(...params);
       }
     } catch (e) {
       console.error('ERROR forming transaction:', e);
