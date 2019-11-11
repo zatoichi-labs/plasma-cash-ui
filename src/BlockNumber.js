@@ -9,9 +9,14 @@ export default function BlockNumber (props) {
   const [blockNumber, setBlockNumber] = useState(0);
   const [blockNumberTimer, setBlockNumberTimer] = useState(0);
 
+  const [extRoot, setExtRoot] = useState(0);
+  const [stateRoot, setStateRoot] = useState(0);
+
   const bestNumber = finalized
     ? api.derive.chain.bestNumberFinalized
     : api.derive.chain.bestNumber;
+
+  const getHeader = api.rpc.chain.getHeader;
 
   useEffect(() => {
     let unsubscribeAll = null;
@@ -19,12 +24,18 @@ export default function BlockNumber (props) {
     bestNumber(number => {
       setBlockNumber(number.toNumber());
       setBlockNumberTimer(0);
+      getHeader(header => {
+        let extRoot = header.extrinsicsRoot.toHex();
+        setExtRoot(extRoot.substring(0, 6) + '....' + extRoot.substring(62, 66));
+        let stateRoot = header.stateRoot.toHex();
+        setStateRoot(stateRoot.substring(0, 6) + '....' + stateRoot.substring(62, 66));
+      });
     }).then(unsub => {
       unsubscribeAll = unsub;
     }).catch(console.error);
 
     return () => unsubscribeAll && unsubscribeAll();
-  }, [bestNumber]);
+  }, [bestNumber, getHeader]);
 
   const timer = () => {
     setBlockNumberTimer(time => time + 1);
@@ -45,7 +56,17 @@ export default function BlockNumber (props) {
           />
         </Card.Content>
         <Card.Content extra>
-          <Icon name='time' /> {blockNumberTimer}
+          <Grid.Column>
+            <Grid.Row>
+              <Icon name='envelope' /> {extRoot}
+            </Grid.Row>
+            <Grid.Row>
+              <Icon name='save' /> {stateRoot}
+            </Grid.Row>
+            <Grid.Row>
+              <Icon name='time' /> {blockNumberTimer}
+            </Grid.Row>
+          </Grid.Column>
         </Card.Content>
       </Card>
     </Grid.Column>
