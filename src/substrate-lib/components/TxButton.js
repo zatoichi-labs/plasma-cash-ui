@@ -50,11 +50,13 @@ export default function TxButton ({
     if (txExecute) {
       txExecute
         .signAndSend(fromParam, ({ status }) => {
-          status.isFinalized
-            ? setStatus(
-                `Completed at block hash #${status.asFinalized.toString()}`
-            )
-            : setStatus(`Current transaction status: ${status.type}`);
+          if (status.isFinalized) {
+            let blockHash = `${status.asFinalized.toString()}`;
+            blockHash = blockHash.substr(0, 6) + "...." + blockHash.substr(60, 64);
+            setStatus(`Completed at block hash ${blockHash}`)
+          } else {
+            setStatus(`Current transaction status: ${status.type}`);
+          }
         })
         .catch(e => {
           setStatus(':( transaction failed');
