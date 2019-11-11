@@ -6,13 +6,12 @@ import {
   Container,
   Icon,
   Image,
-  Label
 } from 'semantic-ui-react';
 
 import { useSubstrate } from './substrate-lib';
 
 export default function AccountSelector (props) {
-  const { api, keyring } = useSubstrate();
+  const { keyring } = useSubstrate();
   const { setAccountAddress } = props;
   const [accountSelected, setAccountSelected] = useState('');
 
@@ -70,42 +69,8 @@ export default function AccountSelector (props) {
             onChange={(_, dropdown) => { onChange(dropdown.value); }}
             value={accountSelected}
           />
-          {api.query.balances && api.query.balances.freeBalance
-            ? <BalanceAnnotation accountSelected={accountSelected} />
-            : null}
         </Menu.Menu>
       </Container>
     </Menu>
   );
-}
-
-function BalanceAnnotation (props) {
-  const { accountSelected } = props;
-  const { api } = useSubstrate();
-  const [accountBalance, setAccountBalance] = useState(0);
-
-  // When account address changes, update subscriptions
-  useEffect(() => {
-    let unsubscribe;
-
-    // If the user has selected an address, create a new subscription
-    accountSelected &&
-      api.query.balances.freeBalance(accountSelected, balance => {
-        setAccountBalance(balance.toString());
-      }).then(unsub => {
-        unsubscribe = unsub;
-      }).catch(console.error);
-
-    return () => unsubscribe && unsubscribe();
-  }, [accountSelected, api.query.balances]);
-
-  return accountSelected
-    ? <Label pointing='left'>
-      <Icon
-        name='money bill alternate'
-        color={accountBalance > 0 ? 'green' : 'red'}
-      />
-      {accountBalance}
-    </Label>
-    : null;
 }
